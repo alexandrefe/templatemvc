@@ -1,0 +1,24 @@
+{
+    "name": "alexandrefe/templatemvc",
+    "description":"Template MVC para projetos pequenos e médios em PHP",
+    "authors": [
+        {
+            "name": "Alexandre Ferreira",
+            "email": "alexandreferreiracontact@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/var-dumper": "^5.2",
+        "twig/twig": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\controllers\\":"app/controllers",
+            "app\\models\\":"app/models",
+            "app\\interfaces\\":"app/interfaces",
+            "app\\repositories\\":"app/repositories",
+            "app\\core\\":"app/core",
+            "app\\classes\\":"app/classes"
+        }
+    }
+}
