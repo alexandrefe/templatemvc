@@ -17,6 +17,9 @@
             "app\\models\\":"app/models",
             "app\\core\\":"app/core",
             "app\\classes\\":"app/classes"
-        }
+        },
+        "files": [
+            "app/helpers/constants.php"
+        ]
     }
 }
