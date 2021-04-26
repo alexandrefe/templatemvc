@@ -1,7 +1,9 @@
 <?php
 
 /**
+ *
  * Constantes de configuração do core de nosso MVC
+ *
  */
 
 define('DEFAULT_CONTROLLER', 'home');

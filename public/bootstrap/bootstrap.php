@@ -3,37 +3,33 @@
 use app\core\Parameters;
 use app\core\Template;
 
-$template = new Template;
-$twig = $template->init();
+$whoops = new \Whoops\Run;
+$whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops->allowQuit(false);
+$whoops->writeToOutput(false);
 
-/**
- * Função que retorna a url atual
- * utilizada nos href e src do html
- */
-$twig->addFunction($site_url);
+try {
 
-/**
- * Chamando o controller digitado na url
- */
-$callController = new app\core\Controller;
-$calledController = $callController->controller();
-$controller = new $calledController();
+    $template = new Template;
+    $twig = $template->init();
 
-/**
- * Atribuindo o twig aos controllers
- */
-$controller->setTwig($twig);
+    $twig->addFunction($site_url);
 
-/**
- * Chamando o método digitado na url
- */
-$callMethod = new app\core\Method;
-$method = $callMethod->method($controller);
+    $callController = new app\core\Controller;
+    $calledController = $callController->controller();
+    $controller = new $calledController();
 
-$parameters = new Parameters;
-$parameter = $parameters->getParameterMethod($controller, $method);
+    $controller->setTwig($twig);
 
-/**
- * Chamando o controller através da classe controller e da classe method
- */
-$controller->$method();
+    $callMethod = new app\core\Method;
+    $method = $callMethod->method($controller);
+
+    $parameters = new Parameters;
+    $parameter = $parameters->getParameterMethod($controller, $method);
+
+    $controller->$method();
+
+} catch (Throwable $e) {
+    $html = $whoops->handleException($e);
+    echo $html;
+}
