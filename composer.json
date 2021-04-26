@@ -14,10 +14,12 @@
     },
     "autoload": {
         "psr-4": {
+
+            "app\\classes\\":"app/classes",
             "app\\controllers\\":"app/controllers",
-            "app\\models\\":"app/models",
             "app\\core\\":"app/core",
-            "app\\classes\\":"app/classes"
+            "app\\models\\":"app/models",
+            "app\\traits\\":"app/traits"           
         },
         "files": [
             "app/helpers/constants.php"
