@@ -15,13 +15,7 @@
     "autoload": {
         "psr-4": {
 
-            "app\\classes\\":"app/classes",
-            "app\\controllers\\":"app/controllers",
-            "app\\core\\":"app/core",
-            "app\\interfaces\\":"app/interfaces",
-            "app\\models\\":"app/models",
-            "app\\traits\\":"app/traits"
-
+            "app\\" : "app"
         },
         "files": [
             "app/helpers/constants.php"
