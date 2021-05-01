@@ -11,7 +11,7 @@ class HomeController extends BaseController
   {
 
     $dataForTemplate = [
-      'title' => "Eclesiacloud - Gestão inteligente para igrejas"
+      'title' => "Template MVC"
     ];
 
     $template = $this->twig->load('home.site.twig');
