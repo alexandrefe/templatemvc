@@ -18,14 +18,13 @@ class HomeController extends BaseController
     public function index()
     {
         $users = $this->user->fetchAll();
-
         dd($users);
 
-        $dataForTemplate = [
+        $data = [
         'title' => "Template MVC"
         ];
 
         $template = $this->twig->load('home.site.twig');
-        $template->display($dataForTemplate);
+        $template->display($data);
     }
 }
