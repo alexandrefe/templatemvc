@@ -1,9 +1,10 @@
 <?php
 
 
-namespace app\models\databases;
+namespace app\models\database;
 
-use app\interfaces\IConnectDatabase;
+use app\interfaces\database\IConnectDatabase;
+use PDO;
 
 class ConnectPdoDatabse implements IConnectDatabase
 {
@@ -11,7 +12,7 @@ class ConnectPdoDatabse implements IConnectDatabase
 
     public function __construct()
     {
-        $this->pdo = new \PDO("mysql:host=localhost; charset=utf8; dbname=paratestar","root","");
+        $this->pdo = new PDO("mysql:host=localhost; charset=utf8; dbname=totest","root","");
         $this->pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }

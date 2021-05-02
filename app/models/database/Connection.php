@@ -1,10 +1,9 @@
 <?php
 
 
-namespace app\models\databases;
+namespace app\models\database;
 
-
-use app\interfaces\IConnectDatabase;
+use app\interfaces\database\IConnectDatabase;
 
 class Connection implements IConnectDatabase
 {
